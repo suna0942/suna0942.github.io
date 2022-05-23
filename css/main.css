@@ -1,0 +1,203 @@
+/* common */
+body {
+  font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+a {
+  display: block;
+}
+.container .fade-in {
+  opacity: 0;
+}
+/* 인트로페이지 */
+.container {
+  max-width: 1200px;
+  min-width: 900px;
+  height: 97vh;
+  /* max-height: 720px; */
+  margin: auto;
+}
+.container .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container .mainImg {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* 배경 삭제하기 */
+  /* background-color: lightgray; */
+}
+.container .mainImg .deco_gradient {
+  position: absolute;
+  width: calc(70% + 20px);
+  height: 100%;
+  background-image: linear-gradient(rgb(155, 230, 255), rgb(226, 248, 255));
+}
+.container .mainImg .imgarea {
+  position: relative;
+  width: calc(65% - 40px);
+  height: 90%;
+  margin-left: 10px;
+  /* 배경 삭제하기 */
+  /* background-color: black; */
+}
+.container .mainImg .imgarea .img{
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  top: calc(15% - 10px);
+  right: 10%;
+  /* background: center / contain no-repeat url(../image/sample.jpg), #fff; */
+  background: center / contain no-repeat #fff;
+}
+.container .mainImg .imgarea .deco_border {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  top: calc(15% - 50px);
+  right: 0;
+  border: 1px solid rgb(78, 184, 220);
+}
+.container .mainImg .imgarea p {
+  position: absolute;
+}
+.container .mainImg .imgarea p:first-child {
+  transform: rotate(-90deg);
+  font-size: 4em;
+  font-weight: 700;
+  left: -200px;
+  top: 220px;
+  color: #fff;
+}
+.container .mainImg .imgarea p:first-child::before {
+  content: "PORTFOLIO";
+  position: absolute;
+  height: 57%;
+  color: rgb(155, 230, 255);
+  overflow: hidden;
+}
+.container .mainImg .imgarea p:nth-child(2) {
+  font-size: 2.2em;
+  font-weight: 100;
+  bottom: -10px;
+  right: 25%;
+  /* color: gray; */
+  color: rgb(103, 204, 238);
+}
+.container .content {
+  position: absolute;
+  width: 210px;
+  height: 300px;
+  top: 25%;
+  right: 20px;
+  font-weight: 100;
+}
+.container .content a {
+  text-decoration: none;
+  color: #333;
+}
+.container .content .content_title {
+  font-size: 2em;
+}
+.container .content .self,
+.container .content .hobby,
+.container .content .map {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+}
+.container .content .self {
+  top: 0;
+}
+.container .content .hobby {
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  overflow: hidden;
+}
+.container .content .map {
+  bottom: 0;
+}
+.container .content .map .up,
+.container .content .map .down {
+  position: absolute;
+  transition: .25s cubic-bezier(0.5, -1, 0.5, 2);
+}
+.container .content .map .down {
+  transform: translateY(30px);
+  opacity: 0;
+}
+.container .content .map:hover .down {
+  transform: translateY(0);
+  opacity: 1;
+}
+.container .content .map:hover .up {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+.container .content .self .front,
+.container .content .self .back {
+  position: absolute;
+  backface-visibility: hidden;
+  transition: .8s;
+}
+.container .content .front {
+  transform: rotateX(0deg);
+}
+.container .content .self:hover .front {
+  transform: rotateX(180deg);
+}
+.container .content .back {
+  transform: rotateX(180deg);
+}
+.container .content .self:hover .back {
+  transform: rotateX(0deg);
+}
+.container .content .hobby p::after {
+  content: " is B와 C";
+  position: absolute;
+  height: 100%;
+  top: 40px;
+  margin-left: 10px;
+  font-size: .8em;
+  transition: .8s;
+  z-index: -1;
+  transform: translateX(150%);
+  transition: 1s;
+}
+.container .content .hobby:hover p::after {
+  transform: translateX(-2%);
+}
+
+.container .snsIcon {
+  position: absolute;
+  display: flex;
+  width: 60px;
+  right: 50px;
+  bottom: 5px;
+  flex-wrap: wrap;
+}
+.container .snsIcon a {
+  width: 50px;
+  height: 50px;
+}
+.container .snsIcon img {
+  width: 30px;
+  margin: 20px;
+  filter: grayscale(100%);
+  opacity: .4;
+  transition: .6s;
+}
+.container .snsIcon a:first-child:hover img,
+.container .snsIcon a:nth-child(2):hover img,
+.container .snsIcon a:last-child:hover img {
+  filter: grayscale(0);
+  transform: scale(1.2);
+  opacity: 1;
+}
