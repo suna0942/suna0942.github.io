@@ -1,8 +1,12 @@
 /* common */
+:root {
+  --text-color: #333;
+  --background-color: #fff;
+  --main-accent-color: rgb(105, 217, 255);
+}
 body {
   font-family: 'Noto Sans KR', 'Roboto', sans-serif;
   font-size: 16px;
-  color: #333;
 }
 a {
   display: block;
@@ -62,7 +66,7 @@ a {
   height: 500px;
   top: calc(15% - 50px);
   right: 0;
-  border: 1px solid rgb(78, 184, 220);
+  border: 1px solid var(--main-accent-color);
 }
 .container .mainImg .imgarea p {
   position: absolute;
@@ -79,7 +83,7 @@ a {
   content: "PORTFOLIO";
   position: absolute;
   height: 57%;
-  color: rgb(155, 230, 255);
+  color: var(--main-accent-color);
   overflow: hidden;
 }
 .container .mainImg .imgarea p:nth-child(2) {
@@ -87,8 +91,7 @@ a {
   font-weight: 100;
   bottom: -10px;
   right: 25%;
-  /* color: gray; */
-  color: rgb(103, 204, 238);
+  color: var(--main-accent-color);
 }
 .container .content {
   position: absolute;
@@ -100,7 +103,7 @@ a {
 }
 .container .content a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
 }
 .container .content .content_title {
   font-size: 2em;
