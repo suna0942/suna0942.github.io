@@ -2,6 +2,9 @@
 :root {
   --text-color: #333;
   --sub-text-color: #888;
+  --black-reverse-text-color: #fff;
+
+  --dark-background-color: rgb(27, 41, 38);
 
   --big-font-size: 2em;
   --middle-font-size: 1.3em;
@@ -17,12 +20,19 @@ body {
 img {
   display: block;
 }
+.font-big {
+  font-size: var(--big-font-size);
+}
+.font-small {
+  font-size: var(--small-font-size);
+  color: var(--sub-text-color);
+}
 /* 메뉴바 */
 header {
   width: 100%;
   height: 60px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 }
 .inner {
   width: 100%;
@@ -33,7 +43,7 @@ header {
   align-items: center;
 }
 .navbar_menu {
-  background-color: rgba(255, 207, 207, 0);
+  background-color: rgb(255, 255, 255);
   padding: 4px 20px;
   font-size: 14px;
 }
@@ -77,23 +87,27 @@ a:hover:not(.home a) {
 }
 /* mainVisual */
 .mainVisual {
+  /* width: 100%; */
+  min-width: 1000px;
   height: 550px;
   position: relative;
-  background-image: linear-gradient(rgb(255, 207, 207, 0), rgb(255, 207, 207, 1));
+  background-image: linear-gradient(to bottom, rgb(255, 207, 207, 0) 70%, rgb(255, 207, 207, 1));
 }
-.visual {
+.mainVisual .swiper {
   position: absolute;
   top: 60px;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  width: 60%;
-  height: 400px;
-  /* 배경 삭제예정 */
-  /* background-color: #888; */
+  width: 900px;
+  height: 430px;
 }
-.visual .visual-content {
+.mainVisual .swiper .swiper-slide {
+  width: 100%;
+  height: 400px;
+}
+.mainVisual .visual-content {
   font-size: var(--middle-font-size);
   font-weight: 400;
   width: 400px;
@@ -102,14 +116,14 @@ a:hover:not(.home a) {
   align-content: space-around;
   bottom: 20px;
 }
-.visual .visual-content p {
+.mainVisual .visual-content p {
   float: left;
   margin: 15px 0 0 20px;
 }
-.visual .visual-content p:nth-child(2n){
+.mainVisual .visual-content p:nth-child(2n){
   clear: both;
 }
-.visual-info .img-box {
+.mainVisual .img-box {
   width: 400px;
   height: 100%;
   position: absolute;
@@ -119,25 +133,164 @@ a:hover:not(.home a) {
   box-sizing: border-box;
   overflow: hidden;
 }
-.visual-info .img-box img {
+.mainVisual .img-box img {
   position: absolute;
   left: 0;
   right: 0;
   margin: auto;
 }
-.visual-info:first-child img {
+.img-box .rotate {
   transform: rotateY(180deg);
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, .6), rgba(255, 255, 255, 0));
 }
-.visual .visual-content .font-big {
+.mainVisual .visual-content p {
+  opacity: 0;
+  transition: 2.4s;
+}
+.mainVisual .swiper-slide-active p {
+  opacity: 1;
+}
+.mainVisual .swiper-next,
+.mainVisual .swiper-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainVisual .swiper-next {
+  right: calc(50% - (450px + 50px + 10px));
+}
+.mainVisual .swiper-prev {
+  left: calc(50% - (450px + 50px + 10px));
+}
+.mainVisual .swiper-next .material-icons,
+.mainVisual .swiper-prev .material-icons {
   font-size: var(--big-font-size);
+  cursor: pointer;
 }
-.visual .visual-content .font-small {
-  font-size: var(--small-font-size);
-  color: var(--sub-text-color);
+.mainVisual .swiper-next:hover .material-icons,
+.mainVisual .swiper-prev:hover .material-icons {
+  border: 1px solid #777;
+  padding: 5px;
+  border-radius: 50%;
 }
-/* .visual-info:nth-child(3), */
-.visual-info:nth-child(2),
-.visual-info:nth-child(1) {
-  display: none;
+.mainVisual .swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal {
+  position: absolute;
+  top: 410px;
+  background: #fff;
 }
+.mainVisual .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: rgb(224, 129, 129);
+}
+/* toggle */
+.subInfo-line {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* width: 100%; */
+  min-width: 1000px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 0;
+  color: var(--black-reverse-text-color);
+  background-color: var(--dark-background-color);
+}
+.subInfo-line .toggle_left,
+.subInfo-line .toggle-center,
+.subInfo-line .toggle-right {
+  position: absolute;
+  width: calc(100% / 3);
+  height: 60px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--sub-text-color);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.subInfo-line .toggle_left {left: 0;}
+.subInfo-line .toggle-right {right: 0;}
+.subInfo-line h4 {
+  margin: 0;
+}
+.subInfo-line .toggle-icons { 
+  position: absolute;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+.subInfo-line .toggle-icons .material-icons {
+  margin-left: 10px;
+  font-size: 30px;
+  bottom: 0;
+}
+.subInfo-line .toggle-icons .material-icons:first-child {
+  position: absolute;
+}
+.subInfo-line .toggle-icons .material-icons:last-child {
+  opacity: 0;
+}
+/* toggle content */
+.subInfo {
+  position: relative;
+  min-width: 1000px;
+  height: calc(100vh - 120px - 20px);
+}
+/* 삭제예정 */
+.subInfo .content-box:nth-child(1) {
+  background-color: rgb(89, 60, 161);
+}
+.subInfo .content-box:nth-child(3) {
+  background-color: aqua;
+}
+.content-box {
+  /* position: relative; */
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 120px - 20px);
+  transition: opacity .7s, height .3s;
+}
+.subInfo .content-box.hide {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.subInfo .content-box > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* colorChip */
+.subInfo .content-box .colorChip-box {
+  position: absolute;
+  width: 170px;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  left: 57px;
+  bottom: 57px;
+  z-index: 1;
+} 
+.subInfo .content-box div img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+}
+.subInfo .content-box div img.show {opacity: 1;}
+#colorChip1 {width: 50px; height: 50px; background-color: #4D836C;}
+#colorChip2 {width: 50px; height: 50px; background-color: #E64E67;}
+#colorChip3 {width: 50px; height: 50px; background-color: #FEB100;}

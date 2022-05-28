@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="../css/introduce.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- JS -->
-  
+  <script defer src="../JS/introduce.js"></script>
+  <!-- SWIPPER -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <!-- 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,59 +47,96 @@
   </header>
   <main>
     <div class="mainVisual">
-      <div class="visual swiper-wrapper">
-        <div class="visual-info swiper-slide">
-          <div class="visual-content">
-            <p class="font-big">MBTI</p>
-            <p>#용감한 수호자</p>
-            <p>#ISFJ-T</p>
-            <p>#내향</p>
-            <p>#감각</p>
-            <p>#감정</p>
-            <p>#판단</p>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="info swiper-slide">
+            <div class="visual-content">
+              <p class="font-big">MBTI</p>
+              <p>#용감한 수호자</p>
+              <p>#잇프제</p>
+              <p>#내향 | #감각</p>
+              <p>#감정 | #판단</p>
+            </div>
+            <div class="img-box">
+              <img src="../image/mbti_isfj.png" alt="MBTI main img" class="rotate">
+            </div>
           </div>
-          <div class="img-box">
-            <img src="../image/mbti_isfj.png" alt="MBTI main img">
+          <div class="info swiper-slide">
+            <div class="visual-content">
+              <p class="font-big">Like Colors</p>
+              <p>나는 색채 속에서 사는게 더 좋다.</p>
+              <p class="font-small">- 데이비드 호크니</p>
+            </div>
+            <div class="img-box">
+              <img src="../image/color_main.png" alt="Color main img">
+            </div>
           </div>
-        </div>
-        <div class="visual-info swiper-slide">
-          <div class="visual-content">
-            <p class="font-big">Like Colors</p>
-            <p>나는 색채 속에서 사는게 더 좋다.</p>
-            <p class="font-small">- 데이비드 호크니</p>
-          </div>
-          <div class="img-box">
-            <img src="../image/color_main.png" alt="Color main img">
-          </div>
-        </div>
-        <div class="visual-info swiper-slide">
-          <div class="visual-content">
-            <p class="font-big">Skills</p>
-            <p>PhotoShop</p>
-            <p>Illustrator</p>
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>JAVASCRIPT</p>
-            <p>Github</p>
-            <p>Java</p>
-            <p>Oracle</p>
-          </div>
-          <div class="img-box">
-            <img src="../image/skills_main.png" alt="Skills main img">
+          <div class="info swiper-slide">
+            <div class="visual-content">
+              <p class="font-big">Skills</p>
+              <p>Github</p>
+              <p>Java</p>
+              <p>Oracle</p>
+              <p>PhotoShop | Illustrator</p>
+              <p>HTML | CSS | JAVASCRIPT</p>
+              
+            </div>
+            <div class="img-box">
+              <img src="../image/skills_main.png" alt="Skills main img">
+            </div>
           </div>
         </div>
-        <!-- 보여지는 이미지는 뒷모습, hover하면 앞모습 -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-next">
+        <div class="material-icons">navigate_next</div>
+      </div>
+      <div class="swiper-prev">
+        <div class="material-icons">navigate_before</div>
+      </div>
+    </div>
+    <div class="subInfo-line">
+      <div class="toggle_left">
+        <h4>MBTI</h4>
+        <div class="toggle-icons">
+          <div class="material-icons">arrow_drop_down</div>
+          <div class="material-icons">arrow_drop_up</div>
+        </div>
+      </div>
+      <div class="toggle-center">
+        <h4>COLOR</h4>
+        <div class="toggle-icons">
+          <div class="material-icons">arrow_drop_down</div>
+          <div class="material-icons">arrow_drop_up</div>
+        </div>
+      </div>
+      <div class="toggle-right">
+        <h4>SKILLS</h4>
+        <div class="toggle-icons">
+          <div class="material-icons">arrow_drop_down</div>
+          <div class="material-icons">arrow_drop_up</div>
+        </div>
       </div>
     </div>
     <div class="subInfo">
-      <ul class="toggle">
-        <!-- MBTI -->
-        <li></li>
-      </ul>
-      <ul class="toggle">
-        <!-- skill -->
-        <li></li>
-      </ul>
+      <div class="content-box mbti-toggle hide">
+        
+      </div>
+      <div class="content-box color-toggle hide">
+        <div class="colorChip-box">
+          <div id="colorChip1"></div>
+          <div id="colorChip2"></div>
+          <div id="colorChip3"></div>
+        </div>
+        <div>
+          <img src="../image/pantone_1.jpg" alt="좋아하는색상1" class="colorChip1">
+          <img src="../image/pantone_2.jpg" alt="좋아하는색상2" class="colorChip2">
+          <img src="../image/pantone_3.jpg" alt="좋아하는색상3" class="colorChip3">
+        </div>
+      </div>
+      <div class="content-box skills-toggle hide">
+        
+      </div>
     </div>
   </main>
   <footer></footer>
