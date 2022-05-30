@@ -1,12 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/subcss/common.css">
+  <link rel="stylesheet" href="../css/subcss/interest.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- JS -->
+  <script defer src="../JS/interest.js"></script>
+  <!-- SWIPPER -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Roboto:wght@100;300;400;700;900&family=Stylish&display=swap" rel="stylesheet">
+
+  <!-- 아이콘 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Interest</title>
 </head>
 <body>
-  
+  <header>
+    <!-- 메뉴 -->
+    <nav class="navbar_menu">
+      <div class="inner">
+        <ul class="home">
+          <li>
+            <a href="../index.html">
+              <img src="../image/icons8-home-100.png" alt="home">
+              Home
+            </a>
+          </li>
+        </ul>
+        <ul class="mainMenu">
+          <li><a href="introduce.html">자기소개</a></li>
+          <li><a href="interest.html">관심사</a></li>
+          <li><a href="loadmap.html">로드맵</a></li>
+        </ul>
+        <ul class="subMenu">
+          <li><a href="javascript:void(0)">회원가입</a></li>
+          <li><a href="javascript:void(0)">로그인</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="mainVisual">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="info swiper-slide">
+            <div class="visual-content">
+              <p class="font-big">Bowling</p>
+              <p>#Myball</p>
+              <p>#목표는 신발사이즈</p>
+            </div>
+            <div class="img-box">
+              <img src="../image/bowling_ball.png" alt="bowling ball">
+              <img src="../image/bowling_pin.png" alt="bowling pin" class="rotate">
+            </div>
+          </div>
+          <div class="info swiper-slide">
+            <div class="visual-content">
+              <p class="font-big">Climbing</p>
+              <p>#2시간넘으면 안되는</p>
+              <p>#등린이</p>
+            </div>
+            <div class="img-box">
+              <img src="../image/climbing_mountain.png" alt="Climbing mountain">
+              <img src="../image/climbing_man.png" alt="Climbing person">
+              <img src="../image/climbing_cloud.png" alt="Cloud">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-next">
+        <div class="material-icons">navigate_next</div>
+      </div>
+      <div class="swiper-prev">
+        <div class="material-icons">navigate_before</div>
+      </div>
+    </div>
+    <div class="subInfo-line">
+      <div class="toggle_left">
+        <h4>MBTI</h4>
+        <div class="toggle-icons">
+          <div class="material-icons">arrow_drop_down</div>
+          <div class="material-icons">arrow_drop_up</div>
+        </div>
+      </div>
+      <div class="toggle-right">
+        <h4>SKILLS</h4>
+        <div class="toggle-icons">
+          <div class="material-icons">arrow_drop_down</div>
+          <div class="material-icons">arrow_drop_up</div>
+        </div>
+      </div>
+    </div>
+    <div class="subInfo">
+      <div class="content-box mbti-toggle hide">
+        <table class="mbti-table">
+          <thead class="font-middle clickMBTI">
+            <td><p>제 MBTI는?</p></td>
+            <td>
+              <p class="font-small">내향형 감각형 감정형 판단형</p>
+              <p class="font-big">I S F J</p>
+            </td>
+          </thead>
+          <tr class="table-middle">
+            <td rowspan="2">
+              <img src="../image/mbti_isfj_3.png" alt="MBTI는 ISFJ">
+              <p class="font-middle">용감한수호자</p>
+              <p>ISFJ-T</p>
+            </td>
+            <td><img src="../image/mbti_isfj_4.JPG" alt="ISFJ빙고" /></td>
+          </tr>
+          <tfoot>
+            <td colspan="2">
+              <span>What is your</span>&nbsp;&nbsp;
+              <span class="font-big">M B T I ?</span>
+            </td>
+          </tfoot>
+        </table>
+      </div>
+      <div class="content-box color-toggle hide">
+        <div class="colorChip-box">
+          <div id="colorChip1"></div>
+          <div id="colorChip2"></div>
+          <div id="colorChip3"></div>
+        </div>
+        <div>
+          <img src="../image/pantone_1.jpg" alt="좋아하는색상1" class="colorChip1">
+          <img src="../image/pantone_2.jpg" alt="좋아하는색상2" class="colorChip2">
+          <img src="../image/pantone_3.jpg" alt="좋아하는색상3" class="colorChip3">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toTop">
+    <div class="material-icons">arrow_upward</div>
+  </div>
 </body>
 </html>
