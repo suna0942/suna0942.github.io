@@ -9,19 +9,25 @@
   --big-font-size: 2em;
   --middle-font-size: 1.3em;
   --small-font-size: .6em;
+
+  --font-Stylish: 'Stylish', 'Noto Sans KR', sans-serif;
 }
+/* html {overflow: hidden;} */
 body {
   color: var(--text-color);
   margin: 0;
-  font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+  font-family: 'Noto Sans KR', 'Roboto', 'Stylish', sans-serif;
   font-weight: 300;
   height: 1000px
 }
-img {
+img, table {
   display: block;
 }
 .font-big {
   font-size: var(--big-font-size);
+}
+.font-middle {
+  font-size: var(--middle-font-size);
 }
 .font-small {
   font-size: var(--small-font-size);
@@ -89,7 +95,7 @@ a:hover:not(.home a) {
 .mainVisual {
   /* width: 100%; */
   min-width: 1000px;
-  height: 550px;
+  min-height: 700px;
   position: relative;
   background-image: linear-gradient(to bottom, rgb(255, 207, 207, 0) 70%, rgb(255, 207, 207, 1));
 }
@@ -192,7 +198,6 @@ a:hover:not(.home a) {
   left: 0;
   right: 0;
   margin: auto;
-  /* width: 100%; */
   min-width: 1000px;
   height: 60px;
   display: flex;
@@ -245,15 +250,7 @@ a:hover:not(.home a) {
   min-width: 1000px;
   height: calc(100vh - 120px - 20px);
 }
-/* 삭제예정 */
-.subInfo .content-box:nth-child(1) {
-  background-color: rgb(89, 60, 161);
-}
-.subInfo .content-box:nth-child(3) {
-  background-color: aqua;
-}
 .content-box {
-  /* position: relative; */
   position: absolute;
   width: 100%;
   height: calc(100vh - 120px - 20px);
@@ -264,13 +261,96 @@ a:hover:not(.home a) {
   opacity: 0;
   overflow: hidden;
 }
-.subInfo .content-box > div {
-  position: absolute;
-  width: 100%;
+
+/* MBTI */
+.mbti-table{
+  box-sizing: border-box;
   height: 100%;
+}
+.subInfo .content-box .mbti-table {
+  width: 1000px;
+  height: 550px;
+  margin: 10px auto;
+  text-align: center;
+  border-collapse: collapse;
+  transition: .6s;
+}
+.mbti-table thead {
+  border-top: 1px double #7fc7cf;
+  border-bottom: 3px double #7fc7cf;
+}
+.mbti-table thead td:first-child {
+  width: 200px;
+  height: 97.6px;
+}
+.mbti-table tr.table-middle td:first-child {
+  width: 200px;
+}
+.mbti-table p {
+  margin: 0;
+}
+.mbti-table thead td:first-child p {
+  font-weight: 700;
+}
+.mbti-table thead td:last-child {
+  padding: 10px;
+}
+.mbti-table thead td:last-child::before {
+  content: '> Click 해주세요!';
+  font-weight: 700;
+  font-size: var(--middle-font-size);
+  text-align: center;
+  cursor: pointer;
+}
+.mbti-table thead td:last-child p {
+  text-shadow: 2px 3px 5px #333;
+  color: #fff;
+  font-weight: 400;
+  display: none;
+}
+.mbti-table .change td:first-child {
+  text-shadow: 2px 3px 5px #333;
+  color: #fff;
+  font-weight: 400;
+}
+.mbti-table .change td:last-child p {
+  display: block;
+}
+.mbti-table .change td:last-child::before {
+  display: none;
+}
+.mbti-table .table-middle {
+  font-weight: 700;
+}
+.mbti-table .table-middle td:nth-child(2) {
+  width: 800px;
+  text-align: center;
+}
+.mbti-table .table-middle img {
+  margin: auto;
+}
+.mbti-table .table-middle p {
+  color: var(--sub-text-color);
+  margin-top: 10px 0;
+  color: #fff;
+}
+.mbti-table .table-middle:hover p {
+  color: var(--sub-text-color);
+}
+.mbti-table tfoot td {
+  color: var(--black-reverse-text-color);
+  background-color: var(--dark-background-color);
+  font-weight: 700;
+  padding: 10px 0;
+}
+.mbti-table tfoot td span:first-child {
+  color: #777;
 }
 
 /* colorChip */
+.subInfo .content-box.color-toggle {
+  background-color: rgb(224, 129, 129);
+}
 .subInfo .content-box .colorChip-box {
   position: absolute;
   width: 170px;
@@ -281,7 +361,7 @@ a:hover:not(.home a) {
   bottom: 57px;
   z-index: 1;
 } 
-.subInfo .content-box div img {
+.subInfo .content-box.color-toggle div img {
   position: absolute;
   left: 0;
   right: 0;
@@ -294,3 +374,78 @@ a:hover:not(.home a) {
 #colorChip1 {width: 50px; height: 50px; background-color: #4D836C;}
 #colorChip2 {width: 50px; height: 50px; background-color: #E64E67;}
 #colorChip3 {width: 50px; height: 50px; background-color: #FEB100;}
+
+/* skills */
+.content-box .content-box-center {
+  width: 1000px;
+  height: 593px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.content-box .skill-group1,
+.content-box .skill-group2 {
+  width: 480px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content-box .skill-group1 > div,
+.content-box .skill-group2 > div {
+  width: 480px;
+  display: flex;
+}
+.skill-group1 > div .skill-icon,
+.skill-group2 > div .skill-icon {
+  width: 100px;
+  text-align: center;
+  margin: auto;
+}
+.gauge {
+  width: 380px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gauge p {width: 380px; padding-left: 20px; font-size: 1.2em; font-weight: 500;}
+.gauge > div {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333;
+  margin: 5px;
+}
+.gauge > div.gauge-in:nth-child(2) {opacity: 25%;}
+.gauge > div.gauge-in:nth-child(3) {opacity: 50%;}
+.gauge > div.gauge-in:nth-child(4) {opacity: 75%;}
+.gauge .gauge-in {background-color: #333;}
+.gauge .gauge-in:nth-child(2) {margin-left: 25px;}
+.gauge .skill-text {
+  margin-left: 30px;
+  font: 600 1.2em/2 var(--font-Stylish);
+  text-align: center;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(77, 131, 108, .3);
+  opacity: 0;
+}
+.gauge:hover .skill-text {opacity: 1;}
+
+#toTop {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  opacity: .5;
+}
+
+#toTop:hover {
+  opacity: 1;
+}
