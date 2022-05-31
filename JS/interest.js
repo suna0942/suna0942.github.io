@@ -18,6 +18,15 @@ new Swiper('.mainVisual .swiper', {
     prevEl: ".mainVisual .swiper-prev",
   },
 });
+// bowling
+// const bowlingEls = document.querySelectorAll('.mainVisual .swiper-slide-active .bowling img');
+// bowlingEls.forEach((bowlingEl, index) => {
+//   gsap.to(bowlingEl, {delay: (index + 1) * .7, autoAlpha: 1});
+// });
+
+// climbing
+let random = Math.random() + 1;
+gsap.to('#cloud', {duration: random, y: 20, repeat: -1, yoyo: true, ease: "Back.easeInOut"});
 
 // toggle
 const [...subInfos] = document.querySelectorAll('.content-box');

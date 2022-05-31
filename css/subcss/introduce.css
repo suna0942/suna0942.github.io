@@ -342,16 +342,3 @@
 }
 .gauge:hover .skill-text {opacity: 1;}
 
-#toTop {
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  cursor: pointer;
-  opacity: .5;
-}
-
-#toTop:hover {
-  opacity: 1;
-}

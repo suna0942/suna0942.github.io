@@ -3,7 +3,7 @@
   min-width: 1000px;
   min-height: 700px;
   position: relative;
-  background-image: linear-gradient(to bottom, rgb(255, 207, 207, 0) 70%, rgb(255, 207, 207, 1));
+  background-image: linear-gradient(to bottom, rgb(255, 207, 207, 0) 70%, rgb(152, 241, 255));
 }
 .mainVisual .swiper {
   position: absolute;
@@ -25,18 +25,17 @@
   width: 400px;
   position: absolute;
   margin-left: 20px;
-  align-content: space-around;
   bottom: 20px;
 }
 .mainVisual .visual-content p {
   float: left;
   margin: 15px 0 0 20px;
 }
-.mainVisual .visual-content p:nth-child(2n){
+.mainVisual .visual-content p:nth-child(2){
   clear: both;
 }
 .mainVisual .img-box {
-  width: 400px;
+  width: 550px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -47,12 +46,48 @@
 }
 .mainVisual .img-box img {
   position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
 }
-.img-box .rotate {
-  transform: rotateY(180deg);
+.mainVisual .swiper-slide .bowling img{
+  opacity: 0;
+}
+.mainVisual .img-box.bowling img:first-child {
+  width: 300px;
+  left: 10px;
+  bottom: 30px;
+  transform: rotate(-25deg);
+  z-index: 1;
+  transition: opacity .5s .5s;
+}
+.mainVisual .img-box.bowling img:nth-child(2) {
+  height: 300px;
+  right: 55px;
+  transform: rotate(38deg);
+  transition: opacity 1.3s 1s;
+}
+.mainVisual .img-box.bowling img:last-child {
+  height: 300px;
+  top: -25px;
+  left: 160px;
+  transform: rotate(323deg);
+  transition: opacity 1.3s 1.3s;
+}
+.mainVisual .swiper-slide-active .bowling img {
+  opacity: 1;
+}
+.mainVisual .img-box.climbing img:first-child {
+  width: 380px;
+  right: 0;
+  bottom: 0;
+}
+.mainVisual .img-box.climbing img:nth-child(2) {
+  width: 250px;
+  left: 100px;
+  bottom: 0;
+}
+.mainVisual .img-box.climbing img:last-child {
+  width: 200px;
+  top: -20px;
+  left: 20px;
 }
 .mainVisual .visual-content p {
   opacity: 0;
@@ -96,7 +131,7 @@
   background: #fff;
 }
 .mainVisual .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: rgb(224, 129, 129);
+  background: rgb(134, 220, 234);
 }
 /* toggle */
 .subInfo-line {
@@ -341,17 +376,3 @@
   opacity: 0;
 }
 .gauge:hover .skill-text {opacity: 1;}
-
-#toTop {
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  cursor: pointer;
-  opacity: .5;
-}
-
-#toTop:hover {
-  opacity: 1;
-}
