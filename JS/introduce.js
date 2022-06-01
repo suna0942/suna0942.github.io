@@ -22,6 +22,7 @@ new Swiper('.mainVisual .swiper', {
 // toggle
 const [...subInfos] = document.querySelectorAll('.content-box');
 const [...subInfoToggleBtns] = document.querySelectorAll('.subInfo-line');
+const [...rotate] = document.querySelectorAll('.subInfo-line .material-icons');
 let subInfosIndex = subInfos.length;
 subInfoToggleBtns.forEach((className) => {
   className.addEventListener('click', (btn) => {
@@ -34,6 +35,11 @@ subInfoToggleBtns.forEach((className) => {
         })
       } else {
         subInfos[i].classList.add('hide');
+      }
+      if(subInfos[i].className.indexOf('hide') > -1){
+        rotate[i].classList.remove('rotate');
+      } else {
+        rotate[i].classList.add('rotate');
       }
     }
   });

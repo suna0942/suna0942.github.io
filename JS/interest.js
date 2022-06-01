@@ -31,6 +31,7 @@ gsap.to('#cloud', {duration: random, y: 20, repeat: -1, yoyo: true, ease: "Back.
 // toggle
 const [...subInfos] = document.querySelectorAll('.content-box');
 const [...subInfoToggleBtns] = document.querySelectorAll('.subInfo-line');
+const [...rotate] = document.querySelectorAll('.subInfo-line .material-icons');
 let subInfosIndex = subInfos.length;
 subInfoToggleBtns.forEach((className) => {
   className.addEventListener('click', (btn) => {
@@ -44,6 +45,11 @@ subInfoToggleBtns.forEach((className) => {
       } else {
         subInfos[i].classList.add('hide');
       }
+      if(subInfos[i].className.indexOf('hide') > -1){
+        rotate[i].classList.remove('rotate');
+      } else {
+        rotate[i].classList.add('rotate');
+      }
     }
   });
 });
@@ -55,79 +61,63 @@ toTop.addEventListener('click', () => {
   })
 });
 
-// mbti
-const clickMBTI = document.querySelector('.mbti-table .clickMBTI');
-clickMBTI.addEventListener('click', () => {
-  const [...tdEls] = clickMBTI.firstElementChild.children;
-  clickMBTI.style.backgroundColor = '#7fc7cf';
-  clickMBTI.classList.add('change');
-});
+// // mbti
+// const clickMBTI = document.querySelector('.mbti-table .clickMBTI');
+// clickMBTI.addEventListener('click', () => {
+//   const [...tdEls] = clickMBTI.firstElementChild.children;
+//   clickMBTI.style.backgroundColor = '#7fc7cf';
+//   clickMBTI.classList.add('change');
+// });
 
-// colorChips
-const [...colorChipEls] = document.querySelectorAll('.colorChip-box div');
-colorChipEls.forEach((idName) => {
-  const chipsParent = idName.parentNode.parentNode;
-  const chipsImg = idName.parentNode.nextElementSibling.children;
+// // colorChips
+// const [...colorChipEls] = document.querySelectorAll('.colorChip-box div');
+// colorChipEls.forEach((idName) => {
+//   const chipsParent = idName.parentNode.parentNode;
+//   const chipsImg = idName.parentNode.nextElementSibling.children;
 
-  idName.addEventListener('click', (event) => {
-    switch(event.target){
-      case colorChip1:
-        chipsParent.style = 'background-color: #4D836C';
-        chipsImg[0].classList.add('show');
-        break;
-      case colorChip2:
-        chipsParent.style = 'background-color: #E64E67';
-        chipsImg[1].classList.add('show');
-        break;
-      case colorChip3:
-        chipsParent.style = 'background-color: #FEB100';
-        chipsImg[2].classList.add('show');
-        break;
-    }
-    const showEl = document.getElementsByClassName('show');
-    for(let i = 0; i < chipsImg.length; i++){
-      if(showEl.length > 1){
-        if(event.target.id != 'colorChip'+[i+1]){
-          chipsImg[i].classList.remove('show');
-        }
-      }
-    }
-  }, colorChip1);
-});
+//   idName.addEventListener('click', (event) => {
+//     switch(event.target){
+//       case colorChip1:
+//         chipsParent.style = 'background-color: #4D836C';
+//         chipsImg[0].classList.add('show');
+//         break;
+//       case colorChip2:
+//         chipsParent.style = 'background-color: #E64E67';
+//         chipsImg[1].classList.add('show');
+//         break;
+//       case colorChip3:
+//         chipsParent.style = 'background-color: #FEB100';
+//         chipsImg[2].classList.add('show');
+//         break;
+//     }
+//     const showEl = document.getElementsByClassName('show');
+//     for(let i = 0; i < chipsImg.length; i++){
+//       if(showEl.length > 1){
+//         if(event.target.id != 'colorChip'+[i+1]){
+//           chipsImg[i].classList.remove('show');
+//         }
+//       }
+//     }
+//   }, colorChip1);
+// });
 
-// skills
-const [...skillEls] = document.querySelectorAll('.skills-toggle .gauge');
-skillEls.forEach((skillEl, index) => {
-  const [...gaugeinoutEl] = skillEl.children;
-  let sum = 0;
-  let textarea = '';
-  for(let i = 0; i < gaugeinoutEl.length; i++){
-    if(gaugeinoutEl[i].classList.value == 'skill-text'){
-      textarea = gaugeinoutEl[i];
-    }
-  }
-  gaugeinoutEl.forEach((inout, index) => {
-    let inoutEls = inout.classList.value;
-    if(inoutEls.match(/gauge-in/g))
-      sum++;
-  });
-    switch(sum){
-    case 4: textarea.innerText = `상`; break;
-    case 3: textarea.innerText = `중상`; break;
-    case 2: textarea.innerText = `중`; break;
-    case 1: textarea.innerText = `하`; break;
-    }
-});
 
+const toTopEl = document.querySelector('#toTop');
 window.addEventListener('scroll', () => {
   if(window.scrollY > 100){
-    toTop.style.display = 'block';
+    toTopEl.style.display = 'block';
+    gsap.to(toTopEl, {
+      x: 0
+    });
   } else {
-    toTop.style.display = 'none';
+    toTopEl.style.display = 'none';
+    gsap.to(toTopEl, {
+      x: 200
+    });
   }
 });
 
-toTop.addEventListener('click', () => {
+toTopEl.addEventListener('click', () => {
   window.scrollTo({
     top: 0
     , behavior: "smooth"
