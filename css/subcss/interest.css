@@ -1,6 +1,7 @@
 :root {
   --border-normal: 1px solid #333;
   --border-sub: 1px solid #c88c00;
+  --border-sub2: 1px solid #006b37;
 }
 /* mainVisual */
 .mainVisual {
@@ -272,13 +273,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: var(--border-sub);
+  border: var(--border-sub2);
 }
 .climbing-box  div{
   padding: 5px;
 }
 .climbing-content {
-  border: var(--border-sub);
+  border: var(--border-sub2);
   border-top: 1px solid rgba(255, 255, 255, 0);
 }
 .climbing-box:nth-child(3) {
