@@ -48,6 +48,7 @@ document.memberFrm.onsubmit = function () {
   
   alert('회원가입 완료!');
   window.open('./login.html', 'loginpage');
+  pwdAlert.innerHTML = '';
 };
 
 
