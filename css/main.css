@@ -19,7 +19,6 @@ a {
   max-width: 1200px;
   min-width: 900px;
   height: 97vh;
-  /* max-height: 720px; */
   margin: auto;
 }
 .container .inner {
@@ -34,8 +33,6 @@ a {
   left: 0;
   right: 0;
   margin: auto;
-  /* 배경 삭제하기 */
-  /* background-color: lightgray; */
 }
 .container .mainImg .deco_gradient {
   position: absolute;
@@ -48,8 +45,6 @@ a {
   width: calc(65% - 40px);
   height: 90%;
   margin-left: 10px;
-  /* 배경 삭제하기 */
-  /* background-color: black; */
 }
 .container .mainImg .imgarea .img{
   position: absolute;
@@ -57,8 +52,7 @@ a {
   height: 500px;
   top: calc(15% - 10px);
   right: 10%;
-  /* background: center / contain no-repeat url(../image/sample.jpg), #fff; */
-  background: center / contain no-repeat #fff;
+  background: center / contain no-repeat url(../image/kimsun_a.jpg), #fff;
 }
 .container .mainImg .imgarea .deco_border {
   position: absolute;
