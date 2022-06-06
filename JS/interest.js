@@ -49,23 +49,16 @@ subInfoToggleBtns.forEach((className) => {
   });
 });
 
-toTop.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0
-    , behavior: "smooth"
-  })
-});
 
 const toTopEl = document.querySelector('#toTop');
 window.addEventListener('scroll', () => {
   if(window.scrollY > 100){
     toTopEl.style.display = 'block';
-    toTopEl.style.opacity = '.5';
     gsap.to(toTopEl, {
       x: 0
     });
-  } else {
-    toTopEl.style.display = 'none';
+  } 
+  else {
     gsap.to(toTopEl, {
       x: 200
     });

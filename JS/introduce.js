@@ -45,13 +45,6 @@ subInfoToggleBtns.forEach((className) => {
   });
 });
 
-toTop.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0
-    , behavior: "smooth"
-  })
-});
-
 // mbti
 const clickMBTI = document.querySelector('.mbti-table .clickMBTI');
 clickMBTI.addEventListener('click', () => {
@@ -116,15 +109,22 @@ skillEls.forEach((skillEl, index) => {
     }
 });
 
+const toTopEl = document.querySelector('#toTop');
 window.addEventListener('scroll', () => {
   if(window.scrollY > 100){
-    toTop.style.display = 'block';
-  } else {
-    toTop.style.display = 'none';
+    toTopEl.style.display = 'block';
+    gsap.to(toTopEl, {
+      x: 0
+    });
+  } 
+  else {
+    gsap.to(toTopEl, {
+      x: 200
+    });
   }
 });
 
-toTop.addEventListener('click', () => {
+toTopEl.addEventListener('click', () => {
   window.scrollTo({
     top: 0
     , behavior: "smooth"

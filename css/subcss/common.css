@@ -100,7 +100,8 @@ a:hover:not(.home a) {
   bottom: 30px;
   right: 30px;
   cursor: pointer;
-  opacity: 0;
+  transform: translateX(200px);
+  opacity: .5;
   z-index: 10;
 }
 
