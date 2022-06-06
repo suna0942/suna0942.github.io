@@ -1,0 +1,90 @@
+body {
+  height: 100vh;
+}
+.roadmap_container{
+  width: 100%;
+  height: 100vh;
+}
+.roadmap_wrapper {
+  position: relative;
+  margin: auto;
+  width: 1080px;
+  top: 68px;
+  overflow: hidden;
+  height: 670px;
+}
+.roadmap_wrapper .road_down,
+.roadmap_wrapper .step-count,
+.roadmap_wrapper .road_up {
+  position: absolute;
+  display: flex;
+}
+.roadmap_wrapper .road_down,
+.roadmap_wrapper .road_up {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+}
+.roadmap_wrapper .road_up {
+  top: 10px;
+  justify-content: space-evenly;
+}
+.roadmap_wrapper .road_down {
+  bottom: 10px;
+  justify-content: space-between;
+}
+.road-step {
+  width: 250px;
+  list-style: none;
+  padding: 0;
+}
+.roadmap_wrapper .step-count {
+  width: calc(100% - 160px);
+  padding: 0 80px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 50px;
+  align-items: center;
+  font-size: var(--middle-font-size);
+  justify-content: space-around;
+}
+.step-count .step:first-of-type,
+.step-count .step:nth-of-type(3),
+.step-count .step:nth-of-type(5) {
+  border-bottom: 1px solid #333;
+}
+.step-count .step:nth-of-type(2),
+.step-count .step:nth-of-type(4) {
+  border-top: 1px solid #333;
+}
+.step-count .step-icon {
+  transform: translateX(-30px);
+  transition: .8s;
+}
+.flag {
+  width: 50px;
+  border-radius: 50%;
+  margin: auto;
+  transition: 1s;
+}
+.road-step:hover .flag {transform: rotateY(180deg);}
+.road-step:hover .step-img {opacity: 1;}
+.step-img {
+  height: 40px;
+  margin: 4px auto;
+  opacity: .5;
+}
+.road-step > li:nth-of-type(2) {
+  font-weight: 400;
+  color: #fff;
+  background-color: #333;
+  padding: 2px 0;
+  margin: 10px 0;
+  text-align: center;
+}
+.road-step > li:last-of-type {
+  text-align: justify;
+}
+.road-step > li:last-of-type span {
+  font-size: 14px;
+}

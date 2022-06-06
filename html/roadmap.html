@@ -4,9 +4,124 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/subcss/common.css">
+  <link rel="stylesheet" href="../css/subcss/roadmap.css">
+  <!-- JS -->
+  <script defer src="../JS/roadmap.js"></script>
+
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <!-- 아이콘 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>Document</title>
 </head>
 <body>
-  
+  <header>
+    <!-- 메뉴 -->
+    <nav class="navbar_menu">
+      <div class="inner">
+        <ul class="home">
+          <li>
+            <a href="../index.html">
+              <img src="../image/icons8-home-100.png" alt="home">
+              Home
+            </a>
+          </li>
+        </ul>
+        <ul class="mainMenu">
+          <li><a href="introduce.html">자기소개</a></li>
+          <li><a href="interest.html">관심사</a></li>
+          <li><a href="roadmap.html">로드맵</a></li>
+        </ul>
+        <ul class="subMenu">
+          <li><a href="signin.html">회원가입</a></li>
+          <li><a href="login.html">로그인</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="roadmap_container">
+      <div class="roadmap_wrapper">
+        <!-- <div class="roadmap_img">
+          <img src="../image/road_sample22.jpg" alt="로드맵배경이미지">
+        </div> -->
+        <div class="road_up">
+          <ul class="road-step">
+            <li>
+              <img src="../image/placeholder.png" class="flag" alt="flag">
+              <img src="../image/road_map_2.jpg" class="step-img" alt="step2">
+              <!-- http://jennyknuth.com/learning-bem/ 이미지 참고 -->
+            </li>
+            <li>BEM / Bootstrap</li>
+            <li>
+              <span>BEM(Block, Element, Modifier)</span>
+              <span>HTML 및 CSS의 클래스에 대해 널리 사용되고 있는 명명 규칙과</span>
+              <span>대표적인 CSS Framework의 Bootstrap</span>
+              <span>이미 만들어진 ui를 클래스 이름으로 지정하면 간편하게 스타일링 가능</span>
+            </li>
+          </ul>
+          <ul class="road-step">
+            <li>
+              <img src="../image/placeholder.png" class="flag" alt="flag">
+              <img src="../image/road_map_4.jpg" class="step-img" alt="step4">
+            </li>
+            <li>GitHub / npm / yarn</li>
+            <li>
+              <span>버전관리 프로그램인 GitHub에 프로젝트를 틈틈이 올리면서 익히고,</span>
+              <span>npm/yarn으로 패키지를 설치/수정/삭제하는 작업을 편리하고 안전하게 수행</span>
+            </li>
+          </ul>
+        </div>
+        <div class="step-count">
+          <p class="step">step 1</p><span class="step-icon">&#10155;</span>
+          <p class="step">step 2</p><span class="step-icon">&#10155;</span>
+          <p class="step">step 3</p><span class="step-icon">&#10155;</span>
+          <p class="step">step 4</p><span class="step-icon">&#10155;</span>
+          <p class="step">step 5</p>
+        </div>
+        <div class="road_down">
+          <ul class="road-step">
+            <li>
+              <img src="../image/placeholder.png" class="flag" alt="flag">
+              <img src="../image/road_map_1.jpg" class="step-img" alt="step1">
+            </li>
+            <li>HTML / CSS / Javascript</li>
+            <li>
+              <span>프론트엔드의 기초 HTML, CSS, Javascript</span>
+              <span>HTML/semantic tags, 페이지 구조, styling, layouts, 반응형 디자인 등의 개념을 먼저 잡고,</span> 
+              <span>언어 자체/문법에 대해 익숙해질 때까지 Javascript를 공부 후 API들을 활용하기</span>
+            </li>
+          </ul>
+          <ul class="road-step">
+            <li>
+              <img src="../image/placeholder.png" class="flag" alt="flag">
+              <img src="../image/road_map_3.jpg" class="step-img" alt="step3">
+            </li>
+            <li>Typescript / React / NextJs</li>
+            <li>
+              <span>Typescript(Javascript + typed)는 Js보다 안정성이 추가, </span>
+              <span>React는 사용자 인터페이스를 만들기 위해 사용되며, JS의 대표 라이브러리.</span>
+              <span>Next.Js는 React 프레임워크로 SSR(서버 사이드 렌더링)을 간편하게 해줌</span>
+            </li>
+          </ul>
+          <ul class="road-step">
+            <li>
+              <img src="../image/placeholder.png" class="flag" alt="flag">
+              <img src="../image/road_map_5.jpg" class="step-img" alt="step5">
+            </li>
+            <li>Publish-Netlify</li>
+            <li>
+              <span>프론트엔드 스택으로만 구성된 정적 애플리케이션을 배포하는 용도로 최적화된 서비스이며,</span>
+              <span>변경사항도 자동으로 적용해주어 유지보수에도 용이</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
