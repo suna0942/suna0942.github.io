@@ -18,11 +18,6 @@ new Swiper('.mainVisual .swiper', {
     prevEl: ".mainVisual .swiper-prev",
   },
 });
-// bowling
-// const bowlingEls = document.querySelectorAll('.mainVisual .swiper-slide-active .bowling img');
-// bowlingEls.forEach((bowlingEl, index) => {
-//   gsap.to(bowlingEl, {delay: (index + 1) * .7, autoAlpha: 1});
-// });
 
 // climbing
 let random = Math.random() + 1;
@@ -61,51 +56,11 @@ toTop.addEventListener('click', () => {
   })
 });
 
-// // mbti
-// const clickMBTI = document.querySelector('.mbti-table .clickMBTI');
-// clickMBTI.addEventListener('click', () => {
-//   const [...tdEls] = clickMBTI.firstElementChild.children;
-//   clickMBTI.style.backgroundColor = '#7fc7cf';
-//   clickMBTI.classList.add('change');
-// });
-
-// // colorChips
-// const [...colorChipEls] = document.querySelectorAll('.colorChip-box div');
-// colorChipEls.forEach((idName) => {
-//   const chipsParent = idName.parentNode.parentNode;
-//   const chipsImg = idName.parentNode.nextElementSibling.children;
-
-//   idName.addEventListener('click', (event) => {
-//     switch(event.target){
-//       case colorChip1:
-//         chipsParent.style = 'background-color: #4D836C';
-//         chipsImg[0].classList.add('show');
-//         break;
-//       case colorChip2:
-//         chipsParent.style = 'background-color: #E64E67';
-//         chipsImg[1].classList.add('show');
-//         break;
-//       case colorChip3:
-//         chipsParent.style = 'background-color: #FEB100';
-//         chipsImg[2].classList.add('show');
-//         break;
-//     }
-//     const showEl = document.getElementsByClassName('show');
-//     for(let i = 0; i < chipsImg.length; i++){
-//       if(showEl.length > 1){
-//         if(event.target.id != 'colorChip'+[i+1]){
-//           chipsImg[i].classList.remove('show');
-//         }
-//       }
-//     }
-//   }, colorChip1);
-// });
-
-
 const toTopEl = document.querySelector('#toTop');
 window.addEventListener('scroll', () => {
   if(window.scrollY > 100){
     toTopEl.style.display = 'block';
+    toTopEl.style.opacity = '.5';
     gsap.to(toTopEl, {
       x: 0
     });
